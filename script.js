@@ -101,6 +101,7 @@ function setLoginData() {
 
 // Função para redirecionar para a página de administração
 function goToAdmin() {
+    console.log("Botão 'Acessar' clicado");
     // Obtém os dados de login do localStorage
     var savedEmail = localStorage.getItem('email');
     var savedPassword = localStorage.getItem('password');
@@ -115,12 +116,12 @@ function goToAdmin() {
     console.log("senha:", senha);
 
     // Verifica se os dados de login fornecidos correspondem aos dados armazenados
-    if (email === savedEmail && senha === savedPassword) {
+    if (email === savedEmail && password === savedPassword) {
         // Se as credenciais forem válidas, redireciona para a página de administração
         window.location.href = 'admin.php';
     } else {
         // Se as credenciais forem inválidas, você pode exibir uma mensagem de erro aqui
-       
+       console.log('credenciais erradas')
     }
 }
 
