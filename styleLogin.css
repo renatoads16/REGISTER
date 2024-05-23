@@ -38,3 +38,7 @@ p {
     font-size: 12px;
 }
 
+#checkIcon {
+    color: rgb(0, 255, 200) !important;
+    font-size: 50px;
+}

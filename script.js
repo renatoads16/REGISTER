@@ -98,7 +98,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             successModal.hide();
             document.getElementById('registrationForm').reset();
             goToLogin();
-        }, 4000);
+        }, 3000);
     }
 });
 
@@ -106,3 +106,10 @@ function goToLogin() {
     window.location.href = 'login.php';
 }
 
+function limparFormulario() {
+    // Limpar os valores dos campos do formulário
+    document.getElementById('floatingName').value = '';
+    document.getElementById('floatingEmail').value = '';
+    document.getElementById('floatingPassword').value = '';
+    document.getElementById('confirmPassword').value = '';
+}

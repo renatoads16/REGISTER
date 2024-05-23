@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <body class="d-flex align-items-center py-4">
+    <body class="d-flex align-items-center py-4" onload="limparFormulario()">
         <div class="container ">
             <div class="container d-flex justify-content-center align-items-center vh-300">
                 <div class="card border-transparent shadow rounded-lg p-2" style="width: 400px;">
@@ -37,11 +37,11 @@
                                 <h1 class="h3 fw-normal">NOVO CADASTRO</h1>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="text" class="form-control" id="floatingName" placeholder="Nome completo" required/>
+                                <input type="text" class="form-control" id="floatingName" placeholder="Nome completo" required autocomplete="off"/>
                                 <label for="floatingName">Nome completo:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="email" class="form-control" id="floatingEmail" placeholder="E-mail" required/>
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="E-mail" required autocomplete="off"/>
                                 <label for="floatingEmail">E-mail:</label>
                             </div>
                             <div class="form-floating my-2">
@@ -58,11 +58,11 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="successModalLabel">Sucesso!</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <h5 class="modal-title" id="successModalLabel">Cadastro realizado com sucesso!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="goToLogin()"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            Seu cadastro foi realizado com sucesso!
+                                        <div class="modal-body text-center" id="checkIcon">
+                                            <i class="bi bi-check-circle-fill" ></i>
                                         </div>
                                     </div>
                                 </div>
