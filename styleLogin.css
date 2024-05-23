@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    background-image: url(imgs/back.jpg);   
+    background-size: cover;
+    background-position: center; 
+}
+.svg {
+    align-items: center;
+}
+.form-container {
+    max-width: 400px;
+    padding: 1rem;
+}
+.darkMode {
+    background: white;
+    color: #292929;
+    background-image: url(imgs/back.jpg);
+    background-size: cover;
+    background-position: center;    
+}
+#themeToggle{
+    cursor: pointer;
+    font-size: 20px;
+}
+#goToLogin {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#logo {
+    width: 400px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+p {
+    color: white;
+    font-size: 12px;
+}
