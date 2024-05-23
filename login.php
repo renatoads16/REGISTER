@@ -45,7 +45,7 @@
                         </div>
                         
                         <div class="d-flex justify-content-center ">
-                            <button class="btn btn-primary w-50 py-2">Acessar</button>
+                            <button class="btn btn-primary w-50 py-2" onclick="goToAdmin()">Acessar</button>
                         </div>
                         <div class="d-flex justify-content-center py-3 ">
                             <a href="cadastro.php" class="btn btn-link" >Novo cadastro</a>
@@ -67,9 +67,10 @@
     </div>
 
     <!-- Scripts JS -->
-    <script src="script.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-
+    <script src="script.js"></script>
+    
 </body>
 </html>

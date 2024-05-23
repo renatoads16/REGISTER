@@ -53,33 +53,11 @@ function toggleTheme() {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
 window.onload = applyTheme;
 
-// Função para verificar se as senhas correspondem
-function checkPasswordMatch() {
-    var password = document.getElementById("floatingPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-    var errorDiv = document.getElementById("passwordMismatch");
 
-    if (password !== confirmPassword) {
-        
-        errorDiv.style.display = "block";
-        return false;
-    } else {
-        
-        errorDiv.style.display = "none";
-    }
-    return true;
-}
-
-// Ouvinte de evento para verificar a correspondência das senhas quando o formulário é enviado
-document.querySelector("form").addEventListener("submit", function(event) {
-    if (!checkPasswordMatch()) {
-        
-        event.preventDefault();
-    }
-});
-
+// Aplica o ano do código automáticamente
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+// Verifica se as senhas correpondem
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -106,10 +84,45 @@ function goToLogin() {
     window.location.href = 'login.php';
 }
 
-function limparFormulario() {
-    // Limpar os valores dos campos do formulário
+// Limpar os valores dos campos do formulário ao atualizar página
+function limparFormulario() {    
     document.getElementById('floatingName').value = '';
     document.getElementById('floatingEmail').value = '';
     document.getElementById('floatingPassword').value = '';
     document.getElementById('confirmPassword').value = '';
 }
+
+// Função para definir os dados de login no localStorage
+function setLoginData() {
+    // Substitua 'admin@example.com' e 'senha123' pelos seus próprios dados de login
+    localStorage.setItem('email', 'renato.barros@cabobranco.tv.br');
+    localStorage.setItem('password', '162397');
+}
+
+// Função para redirecionar para a página de administração
+function goToAdmin() {
+    // Obtém os dados de login do localStorage
+    var savedEmail = localStorage.getItem('email');
+    var savedPassword = localStorage.getItem('password');
+
+    // Obtém os dados de login fornecidos pelo usuário
+    var email = document.getElementById('floatingEmail').value;
+    var senha = document.getElementById('floatingPassword').value;
+
+    console.log("savedEmail:", savedEmail);
+    console.log("savedPassword:", savedPassword);
+    console.log("email:", email);
+    console.log("senha:", senha);
+
+    // Verifica se os dados de login fornecidos correspondem aos dados armazenados
+    if (email === savedEmail && senha === savedPassword) {
+        // Se as credenciais forem válidas, redireciona para a página de administração
+        window.location.href = 'admin.php';
+    } else {
+        // Se as credenciais forem inválidas, você pode exibir uma mensagem de erro aqui
+       
+    }
+}
+
+// Chama a função para definir os dados de login (você pode chamar essa função quando a página for carregada)
+setLoginData();
