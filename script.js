@@ -17,7 +17,7 @@
 
 // Função voltar para página de login
 function goToLogin() {
-    window.location.href = 'index.html'; 
+    window.location.href = 'login.php'; 
 }
 // Temas
 function applyTheme() {
@@ -79,3 +79,30 @@ document.querySelector("form").addEventListener("submit", function(event) {
 });
 
 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const password = document.getElementById('floatingPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        document.getElementById('passwordMismatch').style.display = 'block';
+    } else {
+        document.getElementById('passwordMismatch').style.display = 'none';
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+
+        // Fechar o modal, limpar o formulário e redirecionar para a página de login após 2 segundos
+        setTimeout(function() {
+            successModal.hide();
+            document.getElementById('registrationForm').reset();
+            goToLogin();
+        }, 4000);
+    }
+});
+
+function goToLogin() {
+    window.location.href = 'login.php';
+}
+
