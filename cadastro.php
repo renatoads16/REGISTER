@@ -29,7 +29,7 @@
                                 <i id="themeIcon" class="bi bi-moon-stars-fill" ></i>
                             </div>
                         </div>
-                        <form id="registrationForm" method="post" action="bd.php">
+                        <form id="registrationForm" method="post" action="insert.php">
                             <div class="d-flex justify-content-center mb-3 py-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill me-2" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -37,19 +37,19 @@
                                 <h1 class="h3 fw-normal">NOVO CADASTRO</h1>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="text" class="form-control" id="floatingName" placeholder="Nome completo" required autocomplete="off"/>
+                                <input type="text" class="form-control" id="floatingName" name="nome" placeholder="Nome completo" required autocomplete="off"/>
                                 <label for="floatingName">Nome completo:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="email" class="form-control" id="floatingEmail" placeholder="E-mail" required autocomplete="off"/>
+                                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="E-mail" required autocomplete="off"/>
                                 <label for="floatingEmail">E-mail:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" required minlength="6"/>
+                                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Senha" required minlength="6"/>
                                 <label for="floatingPassword">Senha:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Senha" required minlength="6"/>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required minlength="6"/>
                                 <label for="confirmPassword">Confirmar Senha:</label>
                                 <div id="passwordMismatch" class="text-danger" style="display: none;">As senhas não correspondem.</div>
                             </div>

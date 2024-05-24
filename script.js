@@ -70,6 +70,12 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         document.getElementById('passwordMismatch').style.display = 'none';
         const successModal = new bootstrap.Modal(document.getElementById('successModal'));
         successModal.show();
+        
+        var formData = new FormData(this);
+        fetch('insert.php', {
+            method: 'POST',
+            body: formData
+        })
 
         // Fechar o modal, limpar o formulário e redirecionar para a página de login após 2 segundos
         setTimeout(function() {
