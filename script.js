@@ -116,9 +116,12 @@ function goToAdmin() {
     console.log("senha:", senha);
 
     // Verifica se os dados de login fornecidos correspondem aos dados armazenados
-    if (email === savedEmail && password === savedPassword) {
+    if (email === savedEmail && senha === savedPassword) {
         // Se as credenciais forem válidas, redireciona para a página de administração
-        window.location.href = 'admin.php';
+       
+        window.open("admin.php");
+
+    
     } else {
         // Se as credenciais forem inválidas, você pode exibir uma mensagem de erro aqui
        console.log('credenciais erradas')
