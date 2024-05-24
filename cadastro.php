@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <body class="d-flex align-items-center py-4" onload="limparFormulario()">
+    <div class="d-flex align-items-center py-4" onload="limparFormulario()">
         <div class="container ">
             <div class="container d-flex justify-content-center align-items-center vh-300">
                 <div class="card border-transparent shadow rounded-lg p-2" style="width: 400px;">
@@ -75,13 +75,13 @@
                     </main>
                 </div>
             </div>
-            <div class="d-flex justify-content-center mt-5  ">
-                <footer class="d-flex justify-content-center mt-5 " id="logo">
+            <div class="d-flex justify-content-center mt-1  ">
+                <footer class="d-flex justify-content-center" id="logo">
                     <img id="logo" src="imgs/logos.png">
                 </footer>
             </div>
-            <div class="d-flex justify-content-center py-3 ">
-                <footer class="d-flex justify-content-center py-3" id="logo">
+            <div class="d-flex justify-content-center py-1 ">
+                <footer class="d-flex justify-content-center py-1" id="logo">
                     <p class="mt-5 mb-3 text-body-primary">© <span id="currentYear"></span> - Rede Paraíba de Comunicação. Desenvolvido por TI.</p>
                 </footer>
             </div>

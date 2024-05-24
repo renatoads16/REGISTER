@@ -53,13 +53,13 @@
                 </main>
             </div>
         </div>
-        <div class="d-flex justify-content-center py-3 ">
-            <footer class="d-flex justify-content-center py-3" id="logo">
+        <div class="d-flex justify-content-center mt-1 ">
+            <footer class="d-flex justify-content-center" id="logo">
                 <img id="logo" src="imgs/logos.png">
             </footer>
         </div>
-        <div class="d-flex justify-content-center py-3 ">
-            <footer class="d-flex justify-content-center py-3" id="logo">
+        <div class="d-flex justify-content-center py-1 ">
+            <footer class="d-flex justify-content-center py-1" id="logo">
                 <p class="mt-5 mb-3 text-body-primary">© <span id="currentYear"></span> - Rede Paraíba de Comunicação. Desenvolvido por TI.</p>
             </footer>
         </div>
