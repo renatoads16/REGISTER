@@ -92,17 +92,17 @@ function limparFormulario() {
     document.getElementById('confirmPassword').value = '';
 }
 
+
 // Função para definir os dados de login no localStorage
 function setLoginData() {
-    // Substitua 'admin@example.com' e 'senha123' pelos seus próprios dados de login
+  
     localStorage.setItem('email', 'renato.barros@cabobranco.tv.br');
     localStorage.setItem('password', '162397');
 }
 
 // Função para redirecionar para a página de administração
 function goToAdmin() {
-    console.log("Botão 'Acessar' clicado");
-    // Obtém os dados de login do localStorage
+   
     var savedEmail = localStorage.getItem('email');
     var savedPassword = localStorage.getItem('password');
 
@@ -110,23 +110,19 @@ function goToAdmin() {
     var email = document.getElementById('floatingEmail').value;
     var senha = document.getElementById('floatingPassword').value;
 
-    console.log("savedEmail:", savedEmail);
-    console.log("savedPassword:", savedPassword);
-    console.log("email:", email);
-    console.log("senha:", senha);
-
+  
     // Verifica se os dados de login fornecidos correspondem aos dados armazenados
     if (email === savedEmail && senha === savedPassword) {
-        // Se as credenciais forem válidas, redireciona para a página de administração
-       
+              
         window.open("admin.php");
-
     
     } else {
         // Se as credenciais forem inválidas, você pode exibir uma mensagem de erro aqui
-       console.log('credenciais erradas')
+        alert('Dados inválidos, por favor tente novamente!')
+       
     }
 }
 
 // Chama a função para definir os dados de login (você pode chamar essa função quando a página for carregada)
 setLoginData();
+

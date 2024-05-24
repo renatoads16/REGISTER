@@ -44,7 +44,7 @@
                         </div>
                         
                         <div class="d-flex justify-content-center ">
-                            <button class="btn btn-primary w-50 py-2" onclick="goToAdmin()">Acessar</button>
+                            <button class="btn btn-primary w-50 py-2" onclick="goToAdmin()" >Acessar</button>
                         </div>
                         <div class="d-flex justify-content-center py-3 ">
                             <a href="cadastro.php" class="btn btn-link" >Novo cadastro</a>

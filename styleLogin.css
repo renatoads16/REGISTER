@@ -38,7 +38,64 @@ p {
     font-size: 12px;
 }
 
+
 #checkIcon {
     color: rgb(0, 255, 200) !important;
     font-size: 50px;
+}
+
+/* Adicione isso ao seu arquivo CSS */
+
+@keyframes loginAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  .login-animating {
+    animation: loginAnimation 0.6s forwards;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header.top {
+    width: 100%;
+}
+
+
+.container.text-center {
+    padding-top: 5px;
+}
+
+.card {
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-3d {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-3d:hover {
+    transform: scale(1.05) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.container {
+    padding-top: 50px; 
+    padding-bottom: 50px; 
 }
