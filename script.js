@@ -19,6 +19,7 @@
 function goToLogin() {
     window.location.href = 'login.php'; 
 }
+
 // Temas
 function applyTheme() {
     const toggle = document.body;
@@ -53,11 +54,10 @@ function toggleTheme() {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
 window.onload = applyTheme;
 
-
-// Aplica o ano do código automáticamente
+// Aplica o ano do código automaticamente
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-// Verifica se as senhas correpondem
+// Verifica se as senhas correspondem
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -86,10 +86,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     }
 });
 
-function goToLogin() {
-    window.location.href = 'login.php';
-}
-
 // Limpar os valores dos campos do formulário ao atualizar página
 function limparFormulario() {    
     document.getElementById('floatingName').value = '';
@@ -98,37 +94,54 @@ function limparFormulario() {
     document.getElementById('confirmPassword').value = '';
 }
 
-
-// Função para definir os dados de login no localStorage
-function setLoginData() {
-  
-    localStorage.setItem('email', 'renato.barros@cabobranco.tv.br');
-    localStorage.setItem('password', '162397');
-}
-
 // Função para redirecionar para a página de administração
 function goToAdmin() {
-   
-    var savedEmail = localStorage.getItem('email');
-    var savedPassword = localStorage.getItem('password');
+    showButtonLoading();
 
-    // Obtém os dados de login fornecidos pelo usuário
     var email = document.getElementById('floatingEmail').value;
     var senha = document.getElementById('floatingPassword').value;
 
-  
-    // Verifica se os dados de login fornecidos correspondem aos dados armazenados
-    if (email === savedEmail && senha === savedPassword) {
-              
-        window.open("admin.php");
-    
-    } else {
-        // Se as credenciais forem inválidas, você pode exibir uma mensagem de erro aqui
-        alert('Dados inválidos, por favor tente novamente!')
-       
-    }
+    // Cria um objeto FormData com os dados de login
+    var formData = new FormData();
+    formData.append('email', email);
+    formData.append('senha', senha);
+
+    // Faz uma solicitação AJAX para a API PHP
+    fetch('searchLogin.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === "success") {
+            window.open("admin.php", "_self"); // Redireciona se a autenticação for bem-sucedida
+        } else {
+            alert('Dados inválidos, por favor tente novamente!');
+        }
+        hideButtonLoading();
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        hideButtonLoading();
+    });
 }
 
-// Chama a função para definir os dados de login (você pode chamar essa função quando a página for carregada)
-setLoginData();
+function showButtonLoading() {
+    var loginButton = document.getElementById('loginButton');
+    var buttonText = document.getElementById('buttonText');
+    var buttonSpinner = document.getElementById('buttonSpinner');
 
+    loginButton.disabled = true;
+    buttonText.classList.add('d-none');
+    buttonSpinner.classList.remove('d-none');
+}
+
+function hideButtonLoading() {
+    var loginButton = document.getElementById('loginButton');
+    var buttonText = document.getElementById('buttonText');
+    var buttonSpinner = document.getElementById('buttonSpinner');
+
+    loginButton.disabled = false;
+    buttonText.classList.remove('d-none');
+    buttonSpinner.classList.add('d-none');
+}
