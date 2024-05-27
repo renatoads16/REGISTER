@@ -104,7 +104,7 @@ function goToAdmin() {
     // Cria um objeto FormData com os dados de login
     var formData = new FormData();
     formData.append('email', email);
-    formData.append('senha', senha);
+    formData.append('password', senha);
 
     // Faz uma solicitação AJAX para a API PHP
     fetch('searchLogin.php', {
@@ -113,9 +113,13 @@ function goToAdmin() {
     })
     .then(response => response.text())
     .then(data => {
-        if (data === "success") {
-            window.open("admin.php", "_self"); // Redireciona se a autenticação for bem-sucedida
+        console.log("Resposta:", data);
+
+        if (data.trim().includes("success")) { // Utilizei trim() para remover espaços em branco extras e includes() para verificar se a resposta inclui "success"
+            console.log("Autenticação bem-sucedida.");
+            window.location.href = "admin.php"; // Redireciona se a autenticação for bem-sucedida
         } else {
+            console.log("Autenticação falhou.");
             alert('Dados inválidos, por favor tente novamente!');
         }
         hideButtonLoading();
@@ -125,6 +129,8 @@ function goToAdmin() {
         hideButtonLoading();
     });
 }
+
+
 
 function showButtonLoading() {
     var loginButton = document.getElementById('loginButton');
