@@ -44,47 +44,53 @@
                                 <input type="checkbox" class="form-check-input " id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">Lembrar Senha</label>
                             </div>
-
-
-                            <!-- Button trigger modal -->
                             <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Esqueci minha senha
                             </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Resetar Senha</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-floating my-2">
-                                                <input type="email" class="form-control" id="floatingEmail" placeholder="Seu e-mail" required />
-                                                <label for="floatingEmail">E-mail:</label>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-
                         <div class="d-flex justify-content-center">
                             <button id="loginButton" type="button" class="btn btn-primary w-50 py-2" onclick="goToAdmin()">
                                 <span id="buttonText">Acessar</span>
                                 <span id="buttonSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                             </button>
                         </div>
-
-
                         <div class="d-flex justify-content-center py-3 ">
                             <a href="cadastro.php" class="btn btn-link">Novo cadastro</a>
                         </div>
+                    </form>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Resetar Senha</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="resetPassword.php" method="post">
+                                        <div class="modal-body">
+                                            <div class="form-floating my-2">
+                                                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="Seu e-mail" required />
+                                                <label for="floatingEmail">E-mail:</label>
+                                            </div>
+                                            <div class="form-floating my-2">
+                                                <input type="password" class="form-control" id="novaSenha" name="novaSenha" placeholder="Nova Senha" required minlength="6" />
+                                                <label for="password">Nova Senha:</label>
+                                            </div>
+                                            <div class="form-floating my-2">
+                                                <input type="password" class="form-control" id="confirmNovaSenha" name="confirmNovaSenha" placeholder="Confirmar Nova Senha" required minlength="6" />
+                                                <label for="confirmPassword">Confirmar Nova Senha:</label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" id="btnResetSenha" class="btn btn-primary">Resetar Senha</button>
+                                        </div>
+                                    </form>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
                     </form>
                 </main>
             </div>
