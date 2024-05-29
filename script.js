@@ -151,3 +151,6 @@ function hideButtonLoading() {
     buttonText.classList.remove('d-none');
     buttonSpinner.classList.add('d-none');
 }
+
+// Reset password
+
