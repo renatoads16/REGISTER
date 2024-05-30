@@ -73,16 +73,8 @@
                                                 <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="Seu e-mail" required />
                                                 <label for="floatingEmail">E-mail:</label>
                                             </div>
-                                            <div class="form-floating my-2">
-                                                <input type="password" class="form-control" id="novaSenha" name="novaSenha" placeholder="Nova Senha" required minlength="6" />
-                                                <label for="password">Nova Senha:</label>
-                                            </div>
-                                            <div class="form-floating my-2">
-                                                <input type="password" class="form-control" id="confirmNovaSenha" name="confirmNovaSenha" placeholder="Confirmar Nova Senha" required minlength="6" />
-                                                <label for="confirmPassword">Confirmar Nova Senha:</label>
-                                            </div>
                                         </div>
-                                        <div class="modal-footer">
+                                        <div class="modal-footer" >
                                             <button type="submit" id="btnResetSenha" class="btn btn-primary">Resetar Senha</button>
                                         </div>
                                     </form>
