@@ -1,46 +1,79 @@
 <?php
-include_once('conect.php');
+// Inicie a sessão para mostrar mensagens de sucesso/erro
+session_start();
 
-if(isset($_POST['ok'])) {
+// Inclua o arquivo de conexão com o banco de dados
+require 'conect.php';
 
-    $email = $mysqli->escape_string($_POST['email']);
+// Inclua o arquivo do PHPMailer
+require_once 'PHPMailer.php';
+require 'SMTP.php';
+require 'Exception.php';
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $erro[] = "E-mail inválido";
-    }
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    if(count($erro) == 0) {
-        // Consulta preparada para selecionar o usuário com o e-mail fornecido
-        $sql = "SELECT * FROM usuarios WHERE email = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+// Função para gerar uma senha aleatória
+function generatePassword($length = 8)
+{
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return substr(str_shuffle($chars), 0, $length);
+}
 
-        if($result->num_rows == 0) {
-            $erro[] = "O e-mail informado não existe!";
-        } else {
-            // Gere uma nova senha
-            $newPass = substr(md5(time()), 0, 6);
-            $newPassCrip = md5(md5($newPass));
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
 
-            // Atualize a senha no banco de dados
-            $sql_update = "UPDATE usuarios SET password = '$newPassCrip' WHERE email = '$email'";
-            $sql_query = $mysqli->query($sql_update) or die ($mysqli->error);
+    // Verifique se o e-mail está registrado no banco de dados
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-            // Envie a nova senha por e-mail
-            if (mail($email, "Sua nova senha", "Sua nova senha: " . $newPass)) {
-                echo 'Uma nova senha foi enviada para o seu e-mail.';
-            } else {
-                echo 'Erro ao enviar e-mail.';
-            }
-            echo "Nova senha: " . $newPass; // Debug - Verifique se a nova senha está sendo gerada corretamente
-            echo "Email: " . $email; // Debug - Verifique se o email está correto
+    if ($user) {
+        // Gerar uma senha aleatória
+        $newPassword = generatePassword();
+
+        // Atualizar a senha no banco de dados
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+        $updateStmt = $conn->prepare("UPDATE usuarios SET password = ? WHERE email = ?");
+        $updateStmt->bind_param('ss', $hashedPassword, $email);
+        $updateStmt->execute();
+
+        // Envie a nova senha por e-mail usando PHPMailer
+        $mail = new PHPMailer(true);
+
+        try {
+            // Configurações do servidor SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'renato.adsistema@gmail.com'; // Seu endereço de e-mail do Gmail
+            $mail->Password = 'rba162397'; // Sua senha do Gmail
+            $mail->Port = 587; // Porta SMTP do Gmail para comunicações seguras (TLS/STARTTLS)
+            $mail->SMTPSecure = 'tls'; // Tipo de criptografia - TLS
+
+            // Remetente
+            $mail->setFrom('renato.adsistema@gmail.com', 'Renato'); // Seu endereço de e-mail e nome
+
+            // Destinatário
+            $mail->addAddress($email);
+
+            // Conteúdo do e-mail
+            $mail->isHTML(true);
+            $mail->Subject = 'Nova Senha';
+            $mail->Body = "Sua nova senha é: <strong>$newPassword</strong>";
+
+            // Envie o e-mail
+            $mail->send();
+
+            $_SESSION['message'] = "Uma nova senha foi enviada para o seu e-mail.";
+        } catch (Exception $e) {
+            $_SESSION['message'] = "Falha ao enviar a nova senha por e-mail: {$mail->ErrorInfo}";
         }
     } else {
-        foreach ($erro as $msg) {
-            echo $msg . "<br>";
-        }
+        $_SESSION['message'] = "Nenhuma conta encontrada com este e-mail.";
     }
+    header('Location: resetPass.php');
+    exit();
 }
-?>

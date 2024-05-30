@@ -154,3 +154,15 @@ function hideButtonLoading() {
 
 // Reset password
 
+document.addEventListener("DOMContentLoaded", function () {
+    const formResetSenha = document.getElementById("formResetSenha");
+
+    formResetSenha.addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o comportamento padrão de enviar o formulário
+
+        // Aqui você pode adicionar código adicional, se necessário
+
+        // Submete o formulário
+        this.submit();
+    });
+});

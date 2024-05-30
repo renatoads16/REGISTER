@@ -67,15 +67,16 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="resetPassword.php" method="post">
+                                    <form action="resetPassword.php" method="post" id="formResetSenha">
                                         <div class="modal-body">
                                             <div class="form-floating my-2">
                                                 <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="Seu e-mail" required />
                                                 <label for="floatingEmail">E-mail:</label>
+                                                <p>Digite seu e-mail para receber uma nova senha.</p>
                                             </div>
                                         </div>
                                         <div class="modal-footer" >
-                                            <button type="submit" id="btnResetSenha" class="btn btn-primary">Resetar Senha</button>
+                                            <button type="submit" id="btnResetSenha" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </form>
                                 </div>
