@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->SMTPSecure = 'tls'; // Tipo de criptografia - TLS
 
             // Remetente
-            $mail->setFrom('renato.adsistema@gmail.com', 'Renato'); // Seu endereço de e-mail e nome
+            $mail->setFrom('rbarros.dev@gmail.com', 'Renato'); // Seu endereço de e-mail e nome
 
             // Destinatário
             $mail->addAddress($email);

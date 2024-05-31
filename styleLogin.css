@@ -25,7 +25,7 @@ html, body {
     cursor: pointer;
     font-size: 20px;
 }
-#goToLogin {
+#goToButton {
     cursor: pointer;
     font-size: 20px;
 }
@@ -119,4 +119,18 @@ header.top {
 
 .d-none {
     display: none;
+}
+
+.card-img-top {
+    height: 100;
+    width: 100;
+}
+
+#goToUsers {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.card-full-width {
+    width: 100%;
 }

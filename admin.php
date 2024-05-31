@@ -16,7 +16,7 @@
             <main class="container main-container text-center">
                 <div class="container d-flex justify-content-between align-items-end  py-1 ">
                     <div>
-                        <button class="btn btn-icon" id="goToLogin" onclick="goToLogin()">
+                        <button class="btn btn-icon" id="goToButton" onclick="goToLogin()">
                             <i class="bi bi-box-arrow-left"></i>
                         </button>
                     </div>
@@ -28,7 +28,7 @@
                     <h1 class="h3 fw-bold">Área Administrativa</h1>
                 </div>
                 <div class="row mb-4">
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
                             <img src="imgs/user.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -37,16 +37,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/user.png" class="card-img-top" alt="...">
+                            <img src="imgs/gerente.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Gerentes</h5>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
                             <img src="imgs/user.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
                             <img src="imgs/user.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToUsers" onclick="goToUsers()">
                         <div class="card card-3d" style="width: 18rem;">
                             <img src="imgs/user.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 py-2" id="goToLogin" onclick="goToLogin()">
+                    <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
                             <img src="imgs/user.png" class="card-img-top" alt="...">
                             <div class="card-body">

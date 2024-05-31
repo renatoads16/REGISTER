@@ -166,3 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
         this.submit();
     });
 });
+
+function goToUsers() {
+    window.location.href = 'users.php'; 
+}
+function returnAdmin() {
+    window.location.href = 'admin.php'; 
+}
