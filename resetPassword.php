@@ -6,9 +6,9 @@ session_start();
 require 'conect.php';
 
 // Inclua o arquivo do PHPMailer
-require_once 'PHPMailer.php';
-require 'SMTP.php';
-require 'Exception.php';
+require_once './src/PHPMailer.php';
+require './src/SMTP.php';
+require './src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'renato.adsistema@gmail.com'; // Seu endereço de e-mail do Gmail
+            $mail->Username = 'rbarros.dev@gmail.com'; // Seu endereço de e-mail do Gmail
             $mail->Password = 'rba162397'; // Sua senha do Gmail
             $mail->Port = 587; // Porta SMTP do Gmail para comunicações seguras (TLS/STARTTLS)
             $mail->SMTPSecure = 'tls'; // Tipo de criptografia - TLS

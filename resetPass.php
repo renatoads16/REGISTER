@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
-    <title>Cadastro</title>
+    <title>Reset Senha</title>
 </head>
 
 <body>
@@ -44,11 +44,11 @@
                                 <input type="password" class="form-control" id="novaSenha" name="novaSenha" placeholder="Nova Senha" required minlength="6">
                                 <label for="novaSenha">Nova Senha:</label>
                             </div>
-                            <div class="form-floating my-2">
+                            <div class="form-floating my-3">
                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Nova Senha" required minlength="6">
                                 <label for="confirmPassword">Confirmar Nova Senha:</label>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Resetar Senha</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-2" >Resetar Senha</button>
                         </form>
                     </main>
                 </div>
