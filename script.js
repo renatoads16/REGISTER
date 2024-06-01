@@ -115,18 +115,20 @@ function goToAdmin() {
     .then(data => {
         console.log("Resposta:", data);
 
-        if (data.trim().includes("success")) { // Utilizei trim() para remover espaços em branco extras e includes() para verificar se a resposta inclui "success"
+        if (data.trim().includes("success")) {
             console.log("Autenticação bem-sucedida.");
-            window.location.href = "admin.php"; // Redireciona se a autenticação for bem-sucedida
+            setTimeout(function() {
+                window.location.href = "admin.php"; // Redireciona após 3 segundos se a autenticação for bem-sucedida
+            }, 2000);
         } else {
             console.log("Autenticação falhou.");
             alert('Dados inválidos, por favor tente novamente!');
+            hideButtonLoading(); // Esconder o spinner imediatamente em caso de falha de autenticação
         }
-        hideButtonLoading();
     })
     .catch(error => {
         console.error('Erro:', error);
-        hideButtonLoading();
+        hideButtonLoading(); // Esconder o spinner em caso de erro na solicitação AJAX
     });
 }
 
@@ -140,7 +142,8 @@ function showButtonLoading() {
     loginButton.disabled = true;
     buttonText.classList.add('d-none');
     buttonSpinner.classList.remove('d-none');
-}
+
+}   
 
 function hideButtonLoading() {
     var loginButton = document.getElementById('loginButton');

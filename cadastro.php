@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    
+
+    <!-- Biblioteca de ícones -->
+    <script src="https://kit.fontawesome.com/b120a94607.js" crossorigin="anonymous"></script>
+
     <title>Cadastro</title>
 </head>
+
 <body>
-    
+
     <div class="d-flex align-items-center py-4" onload="limparFormulario()">
         <div class="container ">
             <div class="container d-flex justify-content-center align-items-center vh-300">
@@ -22,38 +27,36 @@
                         <div class="container d-flex justify-content-between align-items-end  py-1 ">
                             <div>
                                 <button class="btn btn-icon" id="goToLogin" onclick="goToLogin()">
-                                    <i class="bi bi-arrow-return-left"></i>                                  
+                                    <i class="bi bi-arrow-return-left"></i>
                                 </button>
                             </div>
                             <div class="btn btn-icon" id="themeToggle" onclick="toggleTheme()">
-                                <i id="themeIcon" class="bi bi-moon-stars-fill" ></i>
+                                <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
                             </div>
                         </div>
                         <form id="registrationForm" method="post" action="insert.php">
-                            <div class="d-flex justify-content-center mb-3 py-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill me-2" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                </svg>
-                                <h1 class="h3 fw-normal">NOVO CADASTRO</h1>
+                            <div class="d-flex justify-content-center mb-3 py-3 icon-container">
+                                <i class="fa-solid fa-address-card fa-bounce py-1 pr-2"></i>
+                                <h1 class="h3 fw-normal">PRESENÇA DIGITAL</h1>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="text" class="form-control" id="floatingName" name="nome" placeholder="Nome completo" required autocomplete="off"/>
+                                <input type="text" class="form-control" id="floatingName" name="nome" placeholder="Nome completo" required autocomplete="off" />
                                 <label for="floatingName">Nome completo:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="E-mail" required autocomplete="off"/>
+                                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="E-mail" required autocomplete="off" />
                                 <label for="floatingEmail">E-mail:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Senha" required minlength="6"/>
+                                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Senha" required minlength="6" />
                                 <label for="floatingPassword">Senha:</label>
                             </div>
                             <div class="form-floating my-2">
-                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required minlength="6"/>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required minlength="6" />
                                 <label for="confirmPassword">Confirmar Senha:</label>
                                 <div id="passwordMismatch" class="text-danger" style="display: none;">As senhas não correspondem.</div>
                             </div>
-                    
+
                             <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -62,16 +65,16 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="goToLogin()"></button>
                                         </div>
                                         <div class="modal-body text-center" id="checkIcon">
-                                            <i class="bi bi-check-circle-fill" ></i>
+                                            <i class="bi bi-check-circle-fill"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary w-50 mt-3">Cadastrar</button>
                             </div>
-                        </form>              
+                        </form>
                     </main>
                 </div>
             </div>
@@ -88,10 +91,11 @@
         </div>
     </div>
 
-     <!-- Scripts JS -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-     <script src="script.js"></script>
+    <!-- Scripts JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

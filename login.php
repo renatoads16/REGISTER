@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
+    <!-- Biblioteca de ícones -->
+    <script src="https://kit.fontawesome.com/b120a94607.js" crossorigin="anonymous"></script>
+
     <title>Login</title>
 </head>
 
@@ -25,12 +28,11 @@
                         </div>
                     </div>
                     <form action="searchLogin.php" method="post">
-                        <div class="d-flex justify-content-center  mb-3 py-3 ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill me-2" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg>
+                        <div class="d-flex justify-content-center mb-3 py-3 icon-container">
+                            <i class="fa-sharp fa-solid fa-fingerprint fa-bounce py-1 pr-2"></i>
                             <h1 class="h3 fw-normal">PRESENÇA DIGITAL</h1>
                         </div>
+
                         <div class="form-floating my-2">
                             <input type="email" class="form-control" id="floatingEmail" placeholder="Seu e-mail" required />
                             <label for="floatingEmail">E-mail:</label>
@@ -75,12 +77,12 @@
                                                 <p>Digite seu e-mail para receber uma nova senha.</p>
                                             </div>
                                         </div>
-                                        <div class="modal-footer" >
+                                        <div class="modal-footer">
                                             <button type="submit" id="btnResetSenha" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </form>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>

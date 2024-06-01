@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/gerente.png" class="card-img-top" alt="...">
+                            <img src="imgs/gerente.png" class="card-img-top" alt="gerentes" >
                             <div class="card-body">
                                 <h5 class="card-title">Gerentes</h5>
 
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 py-2" id="goToUsers" onclick="goToUsers()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/user.png" class="card-img-top" alt="...">
+                            <img src="imgs/users.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Usuários</h5>
 
@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/user.png" class="card-img-top" alt="...">
+                            <img src="imgs/supt.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Suporte</h5>
                             </div>
