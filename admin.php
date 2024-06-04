@@ -30,7 +30,7 @@
                 <div class="row mb-4">
                     <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/user.png" class="card-img-top" alt="...">
+                            <img src="imgs/setores.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Setores</h5>
 
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 py-2" id="goToButton" onclick="goToLogin()">
                         <div class="card card-3d" style="width: 18rem;">
-                            <img src="imgs/user.png" class="card-img-top" alt="...">
+                            <img src="imgs/situacoes.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Situações</h5>
 
